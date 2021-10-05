@@ -23,12 +23,23 @@
             android:src="@drawable/comsylogoplat" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/bt_openDoor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Open door" />
 
+        <TextView
+            android:id="@+id/editText"
+            android:layout_width="139dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView"
+            android:textColor="#25383C"
+            android:layout_gravity="bottom"
+            android:text="@string/hello" />
+
     </FrameLayout>
+
+
 
 </androidx.wear.widget.BoxInsetLayout>
