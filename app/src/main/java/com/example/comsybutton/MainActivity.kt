@@ -1,5 +1,6 @@
 package com.example.comsybutton
 import android.app.Activity
+import android.graphics.Color
 import android.os.Bundle
 import com.example.comsybutton.databinding.ActivityMainBinding
 import android.view.View
@@ -11,6 +12,7 @@ import android.widget.Toast
 
 class MainActivity : Activity() {
 
+    var count: Int = 0
 
     private lateinit var binding: ActivityMainBinding
 
@@ -20,19 +22,6 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val button = findViewById<Button>(R.id.bt_openDoor)
-        val textView = findViewById<TextView>(R.id.editText)
-
-        var count: Int = 0;
-
-        // Set a click listener for button widget
-        button.setOnClickListener{
-            count++
-            //textView.text = "anders"
-
-        }
-
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -41,6 +30,14 @@ class MainActivity : Activity() {
 
     }
 
+    fun showText(view: android.view.View) {
+       val textView = findViewById<TextView>(R.id.editText)
+        count++
+        textView.text = count.toString()
+        textView.setTextColor(Color.parseColor("#f5425a"))
+       Toast.makeText(this, "Button clicked",Toast.LENGTH_SHORT).show()
+
+    }
 
 
 }
